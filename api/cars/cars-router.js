@@ -43,5 +43,13 @@ router.put(
     }
   }
 );
+router.delete("/:id", mw.checkCarId, async (req, res, next) => {
+  try {
+    await Cars.remove(req.params.id);
+    res.status(204).send("");
+  } catch (err) {
+    next({ error: err, message: err.message, status: 500 });
+  }
+});
 
 module.exports = router;
