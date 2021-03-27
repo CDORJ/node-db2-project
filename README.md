@@ -73,7 +73,7 @@ The critical information for each car is the vin, make, model, and mileage. They
 ✔️- `[GET] /api/cars/:id` returns a car by the given id.
 ✔️- `[POST] /api/cars` returns the created car. Leading or trailing whitespace on budget `name` should be trimmed before saving to db.
 
-- Manually test your endpoints with a REST client like `Insomnia` or `Postman` to check they are working as expected.
+✔️- Manually test your endpoints with a REST client like `Insomnia` or `Postman` to check they are working as expected.
 - Test your endpoints automatically by running `npm test`.
 
 #### Notes
@@ -86,6 +86,6 @@ The critical information for each car is the vin, make, model, and mileage. They
 
 ### Task 3: Stretch Problems
 
-- Add seed data to the database using `knex seeds`
-- Add `[PUT]` and `[DELETE]` operations to your API.
+✔️- Add seed data to the database using `knex seeds`
+✔️- Add `[PUT]` and `[DELETE]` operations to your API.
 - Write a schema file for a `sales` table. This table should track information on the sale of each car. You may wish to research `foreign keys` in order to link each sale to the entry in `cars` which sold.
