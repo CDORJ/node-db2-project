@@ -47,19 +47,21 @@ The critical information for each car is the vin, make, model, and mileage. They
 
 - Write the following db access functions inside `api/cars/cars-model.js` using Knex:
 
-  - `getAll` resolves to an array of car records (or an empty array)
-  - `getById` resolves to a car record by the given id
-  - `create` resolves to the newly created car record
+✔️- `getAll` resolves to an array of car records (or an empty array)
+✔️- `getById` resolves to a car record by the given id
+✔️- `create` resolves to the newly created car record
 
 #### Write Middleware
 
 - Write the following middlewares inside `api/cars/cars-middleware.js`:
 
-  - `checkCarId` returns a status 404 with a `{ message: "car with id <car id> is not found" }` if the id in `req.params` does not exist in the database.
+✔️- `checkCarId` returns a status 404 with a `{ message: "car with id <car id> is not found" }` if the id in `req.params` does not exist in the database.
 
-  - `checkCarPayload` returns a status 400 with a `{ message: "<field name> is missing" }` if any required field is missing.
+✔️- `checkCarPayload` returns a status 400 with a `{ message: "<field name> is missing" }` if any required field is missing.
 
   - `checkVinNumberValid` returns a status 400 with a `{ message: "vin <vin number> is invalid" }` if the vin number is [invalid](https://www.npmjs.com/package/vin-validator).
+
+  //NOTE checkVinNumberUnique is being handled by the schema and is not needed
 
   - `checkVinNumberUnique` returns a status 400 with a `{ message: "vin <vin number> already exists" }` if the vin number already exists in the database.
 
@@ -67,9 +69,9 @@ The critical information for each car is the vin, make, model, and mileage. They
 
 - Write CR (of CRUD) for the `cars` resource, using the middleware and model functions described above wherever appropriate inside `api/cars/cars-router.js` :
 
-  - `[GET] /api/cars` returns an array of cars sorted by id (or an empty array if there aren't any).
-  - `[GET] /api/cars/:id` returns a car by the given id.
-  - `[POST] /api/cars` returns the created car. Leading or trailing whitespace on budget `name` should be trimmed before saving to db.
+✔️- `[GET] /api/cars` returns an array of cars sorted by id (or an empty array if there aren't any).
+✔️- `[GET] /api/cars/:id` returns a car by the given id.
+✔️- `[POST] /api/cars` returns the created car. Leading or trailing whitespace on budget `name` should be trimmed before saving to db.
 
 - Manually test your endpoints with a REST client like `Insomnia` or `Postman` to check they are working as expected.
 - Test your endpoints automatically by running `npm test`.

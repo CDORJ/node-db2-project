@@ -8,7 +8,7 @@ const checkCarId = async (req, res, next) => {
       req.car = car;
       next();
     } else {
-      next({ message: `${id} is not a valid id number` });
+      next({ message: `${id} is not a valid id number`, status: 400 });
     }
   } catch (err) {
     next(err);
@@ -22,8 +22,8 @@ const checkCarPayload = (req, res, next) => {
       message: "vin, make, model, mileage and color are all required fields",
       status: 400,
     });
-  } else if (body.vin.length !== 17) {
-    next({ message: "vin number must be 17 characters", status: 400 });
+  } else if (body.vin.length !== 7) {
+    next({ message: "vin number must be 7 characters", status: 400 });
   } else {
     next();
   }
