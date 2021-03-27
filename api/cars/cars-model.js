@@ -12,3 +12,9 @@ const create = async (newCar) => {
   const carId = await db("cars").insert(newCar);
   return getById(carId[0]);
 };
+
+module.exports = {
+  getAll,
+  getById,
+  create,
+};
